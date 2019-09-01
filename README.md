@@ -12,6 +12,12 @@
 
 Em breve...
 
+## Implementações a fazer
+
+1. Criar registro de usuários
+2. Criar um login e senha, autenticação com jwt
+3. Deixar as imagens armazenadas por apenas 1 dia
+
 ## Histório de atualizações
 
 * 1.0

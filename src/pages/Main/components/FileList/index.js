@@ -35,7 +35,7 @@ const FileList = ({ files , onDelete }) => (
                     
                     {uploadedFile.url && (
                         <a
-                            href={uploadedFile.url}
+                            href={`file/${uploadedFile.id}`}
                             target="_blank"
                             rel="noopener noreferrer"
                         >

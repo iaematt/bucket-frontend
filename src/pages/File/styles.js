@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,10 +8,14 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     width: 100%;
-    max-width: 400px;
-    margin: 30px;
+    max-width: 1000px;
+    margin: 50px;
     background: #fff;
     border-radius: 4px;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .4);
+`;
+
+export const Content = styled.img`
+    max-width: 100%;
 `;

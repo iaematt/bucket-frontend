@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { uniqueId } from 'lodash';
+import generateHash from 'random-hash';
 import filesize from 'filesize';
 
 import api from '../../services/api';
@@ -10,13 +11,23 @@ import { Container, Content } from './styles';
 import Upload from './components/Upload';
 import FileList from './components/FileList';
 
+
+if(!localStorage.getItem('session')){
+  const session = generateHash({ length: 20 });
+  localStorage.setItem('session', session);
+} 
+
 class App extends Component {
   state = {
     uploadedFiles: []
   };
 
   async componentDidMount() {
-    const response = await api.get('/posts');
+    const response = await api.get('/posts', {
+      headers: {
+        session: localStorage.getItem('session')
+      }
+    });
 
     this.setState({
       uploadedFiles: response.data.map(file => ({
@@ -70,6 +81,9 @@ class App extends Component {
         this.updateFile(uploadedFile.id, {
           progress,
         });
+      },
+      headers: {
+        session: localStorage.getItem('session')
       }
     }).then(response => {
       this.updateFile(uploadedFile.id, {
@@ -88,8 +102,7 @@ class App extends Component {
     await api.delete(`/posts/${id}`);
 
     this.setState({
-      uploadedFiles: this.state.uploadedFiles.filter(file => file.id !== id),
-
+      uploadedFiles: this.state.uploadedFiles.filter(file => file.id !== id)
     })
   }
 
@@ -110,7 +123,9 @@ class App extends Component {
               onDelete={this.handleDelete}
             />
           ) }
+          <span style={{fontSize:11, textAlign: "center", display: 'block', paddingTop: 15, color: '#666'}}>Session: <b> {localStorage.getItem('session')} </b></span>
         </Content>
+        
         <GlobalStyle />
       </Container>
     );

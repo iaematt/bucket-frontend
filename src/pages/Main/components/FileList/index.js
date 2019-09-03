@@ -11,7 +11,11 @@ const FileList = ({ files , onDelete }) => (
                 <FileInfo>
                     <Preview src={uploadedFile.preview} />
                     <div>
-                        <strong>{uploadedFile.name}</strong>
+                        <strong>
+                        {   uploadedFile.name.length > 25 ?
+                            `${uploadedFile.name.substring(0, 25)}...`
+                            : uploadedFile.name
+                        }</strong>
                         <span>
                             {uploadedFile.readableSize} 
                             {!!uploadedFile.url && (

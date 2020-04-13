@@ -1,40 +1,42 @@
-# Upload de fotos
-> Simples envio de fotos para armazenamento na Api, ou em um bucket s3 da amazon.
+# Bucket 🧺
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+Aplicação completa para upload de imagens no host local ou na Amazon S3. O frontend foi desenvolvido em ReactJS e o backend em Node.js.
 
-![](https://uploadpost133.s3.sa-east-1.amazonaws.com/f5bbdec704cb5e6fba82502b80824d0d-teste.png)
+Para visualizar o código do projeto no GitHub: [Backend](https://github.com/iaematt/bucket-backend), [Frontend](https://github.com/iaematt/bucket-frontend)
 
+## Instalações e usos
 
-## Instalação
+### Frontend 🖥
 
-Em breve...
+Clone ou faça o downlod [desse repositório](https://github.com/iaematt/bucket-frontend), acesse a pasta: *bucket-frontend* e faça a instalação:
 
-## Implementações a fazer
+```
+# Clone o repositório
+$ git clone https://github.com/iaematt/bucket-frontend
 
-1. Criar registro de usuários
-2. Criar um login e senha, autenticação com jwt
-3. Deixar as imagens armazenadas por apenas 1 dia
+# Acesse a pasta do frontend
+cd bucket-frontend/
 
-## Histório de atualizações
+# Instale as dependencias
+$ yarn
+```
 
-* 1.0
-    * Aplicação funcionando
+Crie um arquivo **.env** com as seguintes configurações:
+
+```
+# URL da API
+API_URL=
+```
+
+Execute o frontend: 
+
+```
+$ yarn start
+```
 
 ## Meta
 
-Matheus Bastos – [@Instagram](https://instagram.com/iaematt_) – matheusbastos@outlook.com
+[Portfólio](http://devbsb.com.br) – [E-Mail](mailto:matheusbastos@outlook.com) – [Instagram](https://instagram.com/iaematt_)  – [GitHub](https://github.com/iaematt)
 
+*Distribuído sob a licença MIT.*
 
-[https://github.com/iaematt/](https://github.com/iaematt/)
-
-
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
